@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.wrapper {
+    width: 70%;
+    margin: 0 auto;
+}
+.page-holder {
+    min-height: 100vh;
+  }
+  
+  .bg-cover {
+    background: url(../IMG/people-821624_640.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+.d-md-block {
+      color: black;
+  }
+  .btn-primary {
+    color: rgb(77, 77, 77);
+    background-color: #a6aaaf;
+    border-color: #5f5f5f;
+}
+  }

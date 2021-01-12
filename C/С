@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+int main() {
+int input;
+printf(Input your penis inlargement:);
+scanf(%d, &input)
+if (input >= 18); {
+printf("Your penis is too large);
+	else {
+printf("Result= %f \n", result);}
+}
+return 0;
+}
+
