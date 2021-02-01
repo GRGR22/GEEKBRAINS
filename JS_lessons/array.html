@@ -1,12 +1,13 @@
 <meta charset="utf-8">
 <script>
+    // maximum continuous roulette sequences
     var arr = [];
     var rounds = parseInt(prompt('Сколько раундов играем ? (от 1 до 1*10^7)'));
     var red = 0, black = 0, zero = 0;
     var r = 0, b = 0, z = 0;
     var i = 0, f;
 
-    for(i=0; i<=rounds; i++) {
+    for(i=0; i<rounds; i++) {
       var n = (Math.round(Math.random()*10))
       if (n>=6) {
           n = 1
@@ -41,6 +42,5 @@
             };
         } else {z = 0};
     };    
- 
-    console.log('Zero ' +zero+' Red ' +red+' Black ' +black);
+ document.write('Zero ' +zero+' Red ' +red+' Black ' +black);
     </script>
