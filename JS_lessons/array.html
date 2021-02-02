@@ -1,13 +1,44 @@
 <meta charset="utf-8">
 <script>
     // maximum continuous roulette sequences
-    function getRandomInt(max, min) {
+    function getRandomInt(min, max) {
         return Math.floor(Math.random()*(max-min+1))+min;
     };
-    var n=getRandomInt(0,100) 
-    document.write(n +'<br>');
-
-    var n=getRandomInt(-100,0) 
-    document.write(n+'<br>');
+    function getCard() {
+        var cards=['6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A',];
+        return cards [getRandomInt(0, cards.length - 1)];
+    };
+    function getSum() {
+        for (i=0, Sum=0; i<player.length; i++) {
+            var arrElement = player[i];
+            switch(arrElement) {
+                case '6':
+                    Sum+=6;
+                    break;
+                case '7':
+                    Sum+=7;
+                    break;
+                case '8':
+                    Sum+=8;
+                    break;
+                case '9':
+                    Sum+=9;
+                    break;
+                case '10':
+                case 'J':
+                case 'Q':
+                case 'K':
+                    Sum+=10;
+                    break;
+                case 'A':
+                    Sum+=11;
+            }
+        }
+        return Sum;
+    };
+    var dealer = [getCard()];
+    var player = [getCard(), getCard()];
+    document.write('Dealer card - ' +dealer +' Player cards - ' +player +'<br>');
+    document.write('Summ of player cards is: ' +getSum(player));
 
     </script>
