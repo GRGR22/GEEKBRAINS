@@ -10,8 +10,7 @@
     };
     function getSum() {
         for (i=0, Sum=0; i<player.length; i++) {
-            var arrElement = player[i];
-            switch(arrElement) {
+            switch(player[i]) {
                 case '6':
                     Sum+=6;
                     break;
@@ -31,14 +30,17 @@
                     Sum+=10;
                     break;
                 case 'A':
-                    Sum+=11;
+                    if (Sum<10) {
+                        Sum+=11
+                    } else {
+                    Sum+=1};
             }
         }
         return Sum;
     };
     var dealer = [getCard()];
     var player = [getCard(), getCard()];
-    document.write('Dealer card - ' +dealer +' Player cards - ' +player +'<br>');
+    document.write('Dealer card: ' +dealer +' Player cards: ' +player +'<br>');
     document.write('Summ of player cards is: ' +getSum(player));
 
     </script>
