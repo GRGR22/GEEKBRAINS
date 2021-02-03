@@ -1,12 +1,30 @@
 <meta charset="utf-8">
 <script>
-      var howMatchNotes = parseInt(prompt('How match notes in string?'));
-       var alphabet = 'akjvndiywrrmvbzxcujdyehrtfivncvmsfxequwocpbnebctd';
-       var somStrimg = " ";
+   //h4ck3r sp3ack
+      var inputString = prompt('Enter text to convert?');
+      var outputStrimg = "";
        
-       for (i=0; i<howMatchNotes; i++) {
-         somStrimg+=alphabet[Math.floor(Math.random()*alphabet.length)];
-         console.log(alphabet.length)
+      for (i=0; i<inputString.length; i++) {
+         switch(inputString[i]) {
+            case 'A':
+            case 'a':
+               outputStrimg+='4';
+               break;
+            case 'E':
+            case 'e':
+               outputStrimg+='3';
+               break;
+            case 'I':
+            case 'i':
+               outputStrimg+='1';
+               break;
+            case 'O':
+            case 'o':
+               outputStrimg+='0';
+               break;
+            default:
+            outputStrimg+=inputString[i];
+         };
        };
-      document.write(somStrimg);
+      document.write(outputStrimg);
     </script>
