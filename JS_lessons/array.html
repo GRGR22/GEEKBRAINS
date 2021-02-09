@@ -1,6 +1,6 @@
 <meta charset="utf-8">
 <script>
-    // maximum continuous roulette sequences
+    // Back Jack
     function getRandomInt(min, max) {
         return Math.floor(Math.random()*(max-min+1))+min;
     };
@@ -30,7 +30,7 @@
                     Sum+=10;
                     break;
                 case 'A':
-                    if (Sum<10) {
+                    if (Sum<=10) {
                         Sum+=11
                     } else {
                     Sum+=1};
@@ -38,29 +38,45 @@
         }
         return Sum;
     };
+    
     var dealer = [getCard()];
     var player = [getCard(), getCard()];
 
     function getStatus () {
-        return 'Dealer card: ' +dealer  +'  Player cards: ' +player +' Summ of player cards is: ' +getSum(player);
+        return 'Dealer card: ' +dealer  +' Summ of dealer cards is: ' +getSum(dealer) +'  Player cards: ' +player +' Summ of player cards is: ' +getSum(player)
     };
     alert(getStatus());
 
     var answerToContinueGame = '';
+
+    // player time
     do { 
         if (getSum(player) == 21) {
         document.write(getStatus() + '<br>' +'BLACK JACK You WIN!!!');
-        answerToContinueGame ='0';
+        break;
     } else if (getSum(player) > 21) {
         document.write(getStatus() + '<br>' +'You LOSE ((');
-        answerToContinueGame ='0';
+        break;
     } else {
         answerToContinueGame = prompt(getStatus() + ' More card? 1 - Yes / another - No');
         if (answerToContinueGame == '1') {
-            player.push(getCard())
-        };
-    }
-        // alert(getStatus());
+            player.push(getCard())};
+    };
     } while (answerToContinueGame =='1');
 
+    //dealer time 
+    while (getSum(dealer)<17) {
+        dealer.push(getCard())
+        alert('Dealer taked a card  ' +getStatus())
+    };
+
+    // Summary
+    if (getSum(dealer)>getSum(player) && getSum(dealer)<=21) {
+        document.write(getStatus() +'<br>' +'Dealer WIN')
+    } else if (getSum(dealer)<getSum(player)) {
+        document.write(getStatus() +'<br>' +'YOU WIN')
+    } else if (getSum(dealer)==getSum(player)) {
+        document.write(getStatus() +'<br>' +'DEAD HEAD')
+    };
+    
     </script>
