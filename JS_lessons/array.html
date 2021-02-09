@@ -38,7 +38,7 @@
         }
         return Sum;
     };
-    
+
     var dealer = [getCard()];
     var player = [getCard(), getCard()];
 
@@ -73,10 +73,10 @@
     // Summary
     if (getSum(dealer)>getSum(player) && getSum(dealer)<=21) {
         document.write(getStatus() +'<br>' +'Dealer WIN')
-    } else if (getSum(dealer)<getSum(player)) {
-        document.write(getStatus() +'<br>' +'YOU WIN')
     } else if (getSum(dealer)==getSum(player)) {
         document.write(getStatus() +'<br>' +'DEAD HEAD')
+    } else {
+        document.write(getStatus() +'<br>' +'YOU WIN')
     };
     
     </script>
