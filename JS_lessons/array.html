@@ -8,9 +8,9 @@
         var cards=['6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A',];
         return cards [getRandomInt(0, cards.length - 1)];
     };
-    function getSum() {
-        for (i=0, Sum=0; i<player.length; i++) {
-            switch(player[i]) {
+    function getSum(cardsArr) {
+        for (i=0, Sum=0; i<cardsArr.length; i++) {
+            switch(cardsArr[i]) {
                 case '6':
                     Sum+=6;
                     break;
@@ -40,7 +40,27 @@
     };
     var dealer = [getCard()];
     var player = [getCard(), getCard()];
-    document.write('Dealer card: ' +dealer +' Player cards: ' +player +'<br>');
-    document.write('Summ of player cards is: ' +getSum(player));
+
+    function getStatus () {
+        return 'Dealer card: ' +dealer  +'  Player cards: ' +player +' Summ of player cards is: ' +getSum(player);
+    };
+    alert(getStatus());
+
+    var answerToContinueGame = '';
+    do { 
+        if (getSum(player) == 21) {
+        document.write(getStatus() + '<br>' +'BLACK JACK You WIN!!!');
+        answerToContinueGame ='0';
+    } else if (getSum(player) > 21) {
+        document.write(getStatus() + '<br>' +'You LOSE ((');
+        answerToContinueGame ='0';
+    } else {
+        answerToContinueGame = prompt(getStatus() + ' More card? 1 - Yes / another - No');
+        if (answerToContinueGame == '1') {
+            player.push(getCard())
+        };
+    }
+        // alert(getStatus());
+    } while (answerToContinueGame =='1');
 
     </script>
