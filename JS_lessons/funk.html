@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
-    <script>
-    var arr = [8, 55, 3, 4, 5, 6, 7, 8, 1, 0, 98,];
-    function detector(arr) {
-        for (var i = 0; i < arr.length; i++) {
-            if (arr[i] == 5) {
-            return true;
-            }        
-        }    
-    return false;
+    <script>   
+    var arr = [2, 3, 4, 0, 0, 5, 6, 7, 8];     
+    var flag = false;
+    function detect (arr) {
+        for (i=0; i<arr.length; i++) {
+            if (arr[i] == arr[i+1]) {
+                flag = true;
+            }
+        }
+    return flag;
     }
-    console.log(detector(arr));
-
+    console.log(detect(arr))
     </script>
     
 </body>
