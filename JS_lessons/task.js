@@ -1,8 +1,10 @@
 let arr = [];
-let elem = '';
 
-for (i = 0; i < 3; i++) {
-	elem+='X'
-    arr.push(elem)
+for (i = 1; i < 4; i++) {
+    let elem = '';
+	for (j = 0; j < i; j++) {
+        elem+=i
+    };
+    arr.push(elem);
 }
-console.log(arr)
+console.log(arr);
