@@ -1,10 +1,8 @@
 let arr = [];
-
-for (i = 1; i < 4; i++) {
-    let elem = '';
-	for (j = 0; j < i; j++) {
-        elem+=i
-    };
-    arr.push(elem);
+function arrayFill (elem, elemNumber) {
+    for (i = 0; i < elemNumber; i++) {    
+        arr.push(elem);
+    }
+    return arr;
 }
-console.log(arr);
+console.log(arrayFill('T', 52));
