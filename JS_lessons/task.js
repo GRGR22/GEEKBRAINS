@@ -1,7 +1,9 @@
-let arr = [1, 2, 3, 4, 5, 11, 7, 8];
-let result = [];
+let arr = [[1, 2, 3], [4, 5], [6]];
+let summ = 0;
     
-    for (i = arr.length-1; i >= 0; i--) {    
-        result.push(arr[i])        
+    for (i = 0; i < arr.length; i++) {  
+        for (j = 0; j < arr[i].length; j++)  {
+        summ+=arr[i] [j]
+        }     
     }
-console.log(result);
+console.log(summ);
