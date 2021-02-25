@@ -1,18 +1,10 @@
-let arr = [1, 2, 3, -1, -2, 9];
-let result = [];
+let num = prompt('Inter number');
+let arrSplit = num.split('');
 
-function isNumberInRange(num) {
-	if (num > 0 && num < 10) {
-		return true;
-	} else {
-		return false;
-	}
-}
-
-for (i=0; i <arr.length; i++) {
-        if (isNumberInRange(arr[i])) {
-            result.push(arr[i])
-        }
+function getDigitsSum (arr) {
+    for (i=0, DigitsSum = 0; i < arr.length; i++) {
+        DigitsSum = DigitsSum + Number(arr[i]);
     }
-
-console.log((result));
+    return DigitsSum;
+}
+console.log(getDigitsSum(arrSplit));
