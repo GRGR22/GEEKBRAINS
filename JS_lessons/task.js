@@ -1,9 +1,9 @@
-let endingYear = isEven(prompt('Enter the number to parity check'));
+let arr = [];
+let num = getDivisors(Number(prompt('Enter number to detect Divisors')));
 
-function isEven (num) {
-    if (num % 2 == 0) {
-        console.log(true)
-    } else {
-        console.log(false)
+function getDivisors (toDivise) {
+    for (i=1; i <=toDivise; i++) {
+        if (toDivise % i === 0) arr.push(i)
     }
 };
+console.log(arr)
