@@ -1,10 +1,16 @@
-let num = prompt('Inter number');
-let arrSplit = num.split('');
+let endingYear = prompt('Enter number ending of range');
+getRange(endingYear);
 
-function getDigitsSum (arr) {
-    for (i=0, DigitsSum = 0; i < arr.length; i++) {
-        DigitsSum = DigitsSum + Number(arr[i]);
+function getRange (endOfRange) {
+    for (i=1; i <= endOfRange; i++) {
+        if (getDigitsSum(i)==14) console.log(i);
+    };
+};
+
+function getDigitsSum (num) {
+    let strOfnum = num.toString().split('');    
+    for (j=0, DigitsSum = 0; j < strOfnum.length; j++) {
+        DigitsSum = DigitsSum + Number(strOfnum[j]);
     }
     return DigitsSum;
-}
-console.log(getDigitsSum(arrSplit));
+};
