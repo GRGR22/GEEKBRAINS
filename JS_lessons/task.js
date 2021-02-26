@@ -1,5 +1,4 @@
-let endingYear = prompt('Enter number ending of range');
-getRange(endingYear);
+let endingYear = getRange(prompt('Enter number ending of range'));
 
 function getRange (endOfRange) {
     for (i=1; i <= endOfRange; i++) {
