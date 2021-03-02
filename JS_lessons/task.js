@@ -1,8 +1,10 @@
 // let a = [['Goodbye'], {'Great': 'Job'}];
-let b = [1234, 1, 2, 3, 1234, 1234, 4, 5, 5, 5, 2, 1, 3, 66, 6, 66, 66, 7];
-let newArr = [];
-distinct(b);
-function distinct(a){
-    let z = [...new Set(a)]
-    console.log(z);
+let b = [{state: 'Maine', capital: 'Augusta'}];
+console.log (capital(b));
+function capital(capitals){
+    let valueArr = [];
+    for (let value of Object.values(capitals)) {
+        valueArr.push(value)
+      }
+      return ("The capital of " + valueArr[0]  + " is " + valueArr[1]+".");
     }
